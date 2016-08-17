@@ -22,18 +22,6 @@ function loadFullpage (){
 			showWeare();
 			showShowreel();
 			showClients();
-
-			console.log('#fp-nav  top:        ' + $('#fp-nav').offset().top);
-			console.log('#fp-nav left:        ' + $('#fp-nav').offset().left);
-
-			console.log('#fp-nav a  top:      ' + $('#fp-nav a').offset().top);
-			console.log('#fp-nav a left:      ' + $('#fp-nav a').offset().left);
-
-			console.log('#fp-nav svg  top:    ' + $('#fp-nav svg').offset().top);
-			console.log('#fp-nav svg left:    ' + $('#fp-nav svg').offset().left);
-
-			console.log('#fp-nav circle  top: ' + $('#fp-nav circle').offset().top);
-			console.log('#fp-nav circle left: ' + $('#fp-nav circle').offset().left);
 		},
 		afterResize: function(){
 			// Prevent showreel bacкground loop video from freezing
@@ -1263,11 +1251,16 @@ function loadFullpage (){
       var circleNavEnt = $('#fp-nav').find("svg .circleNav").eq($(this).index()+1);
       var hoverCy   = parseInt(circleNavEnt.attr('cy'));
       var currentCy = parseInt($('#fp-nav').find("svg .circleNav.current").attr('cy'));
+
+      console.log($(this).index());
+
+      $('#fp-nav').find("svg .circleInner").eq($(this).index()).css("fill-opacity", "1");
       
       if(hoverCy != currentCy) circleNavEnt.velocity({ r: 5 }, 200);
    })
    .mouseleave(function(){
       var circleNavLeav = $('#fp-nav').find("svg .circleNav").eq($(this).index()+1);
+      $('#fp-nav').find("svg .circleInner").eq($(this).index()).css("fill-opacity", "0.7");
       circleNavLeav.velocity({ r: 0 }, 200);
    });
 

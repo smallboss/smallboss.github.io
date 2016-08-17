@@ -592,7 +592,6 @@
 	fill: none;
 	stroke: white;
 	stroke-width: 2px;
-	/*transition-duration: .4s*/
 }
 
 .circleNavDiv {
@@ -607,4 +606,23 @@
 	margin: auto;
 	position: absolute;
 	box-sizing: border-box;
+}
+
+.circleInner {
+   fill: white;
+   fill-opacity: 0.7;
+   stroke: none;
+}
+
+.strokeInner {
+	fill: none;
+   stroke: rgba(158,158,158,0.9);
+   stroke-opacity: 0.7;
+   stroke-width: 1px;
+}
+
+#fp-nav ul li a span {
+	opacity: 0 !important;
+	/*background: rgba(255, 255, 255, 0) !important;
+   border: none !important;*/
 }

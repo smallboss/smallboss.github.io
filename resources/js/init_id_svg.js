@@ -17,40 +17,21 @@ function modifyFPNav() {
 
    $("#fp-nav").append("<svg viewBox='0 0 28 107'>");
 
-   var valCy = 14;
-   var valCx = 14.5;
 
-
-   if (navigator.userAgent.toLowerCase().indexOf('webkit')+1) valCy = 13.5;
-   if (navigator.userAgent.toLowerCase().indexOf('edge')+1) valCx = 14;
-
-   if (navigator.userAgent.toLowerCase().indexOf('mac')+1) {
-      valCy = 13.5;
-      valCx = 14;
-
-      if (navigator.userAgent.toLowerCase().indexOf('webkit')+1) valCy = 14;
-   }
-
-   console.log(navigator.userAgent);
-
-   $("#fp-nav svg").append(makeSVG("circle" , {class: 'circleNav', cy: valCy, cx: valCx, r: '0'}));
+   $("#fp-nav svg").append(makeSVG("circle" , {class: 'circleNav', cy: '14', cx: '14', r: '0'}));
    $("#fp-nav svg .circleNav:first-child")
       .attr('r', 5)
       .css('stroke', "#e44036")
       .addClass("current");
 
 
-   // $("#fp-nav svg").append(makeSVG("circle" , {class: 'circleNav', cy: valCy, r: '0'}));
    $("#fp-nav ul li").each(function() {
-      $("#fp-nav svg").append(makeSVG("circle" , {class: 'circleNav', cy: valCy, cx: valCx, r: '0'}));
+      $("#fp-nav svg").append(makeSVG("g", {id: '' + $(this).index()}));
+      $("#fp-nav svg").find("g[id=" + $(this).index() + "]").append(makeSVG("circle" , {class: 'circleNav', cy: '14', cx: '14', r: '0'}));
+      $("#fp-nav svg").find("g[id=" + $(this).index() + "]").append(makeSVG("circle" , {class: 'circleInner', cy: '14', cx: '14', r: '2.6'}));
+      $("#fp-nav svg").find("g[id=" + $(this).index() + "]").append(makeSVG("circle" , {class: 'strokeInner', cy: '14', cx: '14', r: '3'}));
       valCy+=20;
    });
-
-   // $("#fp-nav ul li:first-child a").append("<div class='circleNavDiv moving'></div>");
-
-   // // $("#fp-nav ul li").each(function() {
-   // //    $(this).find('a').append("<div class='circleNavDiv'></div>");
-   // // });
 }
 
 function initIdSvg() {
