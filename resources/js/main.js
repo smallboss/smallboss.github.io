@@ -19,6 +19,21 @@ function loadFullpage (){
 		lockAnchors: true,
 		recordHistory: false,
 		afterRender: function(){
+			showWeare();
+			showShowreel();
+			showClients();
+
+			console.log('#fp-nav  top:        ' + $('#fp-nav').offset().top);
+			console.log('#fp-nav left:        ' + $('#fp-nav').offset().left);
+
+			console.log('#fp-nav a  top:      ' + $('#fp-nav a').offset().top);
+			console.log('#fp-nav a left:      ' + $('#fp-nav a').offset().left);
+
+			console.log('#fp-nav svg  top:    ' + $('#fp-nav svg').offset().top);
+			console.log('#fp-nav svg left:    ' + $('#fp-nav svg').offset().left);
+
+			console.log('#fp-nav circle  top: ' + $('#fp-nav circle').offset().top);
+			console.log('#fp-nav circle left: ' + $('#fp-nav circle').offset().left);
 		},
 		afterResize: function(){
 			// Prevent showreel bacкground loop video from freezing
@@ -30,7 +45,6 @@ function loadFullpage (){
 		},
 		afterLoad: function(anchorLink, index){
 			// console.dir( $('#fp-nav').offset().top + " +"); //OFFSET FP MENU
-			
 /*
 			// 1. INTRO
 			if(anchorLink == 'intro'){
@@ -50,13 +64,13 @@ function loadFullpage (){
 			if(anchorLink == 'clients'){
 				showClients();
 			}
-			
+			*/
 			// 5. PROCESS
 			if(anchorLink == 'process'){
 				showProcess();
-				
+				showTree();
 			}
-*/
+
 		},
 		onLeave: function(index, nextIndex, direction){
 			var leavingSection = $(this);
@@ -64,7 +78,7 @@ function loadFullpage (){
 			changeSlideNav(nextIndex-1);
 						
 			if(nextIndex == 1){
-				showIntro();
+				// showIntro();
 			}
 			
 			if(nextIndex == 2){
@@ -72,7 +86,7 @@ function loadFullpage (){
 			}
 			
 			if(nextIndex == 3){
-				showShowreel();
+				// showShowreel();
 			}
 			
 			if(nextIndex == 4){
@@ -80,17 +94,18 @@ function loadFullpage (){
 			}
 			
 			if(nextIndex == 5){
-				showProcess();
-				setTimeout(showTree(), 700);
+				// showProcess();
+				// setTimeout(showTree(), 700);
 			}
 						
 // Leaving 1. INTRO  =======================================
 			if(index == 1 && direction =='down'){
 				setTimeout(hideIntro, 700);
-				hideWeare();
-				showWeare();
 
 				if(nextIndex == 2){
+					hideWeare();
+					showWeare();
+
 					$('.section.fp-section').eq(index-1)
 						.css({
 								'z-index': 1,
@@ -112,7 +127,7 @@ function loadFullpage (){
 				}
 
 				if(nextIndex == 3){
-					setTimeout(hideWeare, 700);
+					setTimeout(showShowreel, 800);
 
 					$('.section.fp-section').eq(index-1)
 						.css({
@@ -144,8 +159,8 @@ function loadFullpage (){
 				}
 
 				if(nextIndex == 4){
-					setTimeout(showShowreel, 500);
-					setTimeout(showClients, 900);
+					hideClients();
+					setTimeout(showClients, 1100);
 
 					$('.section.fp-section').eq(index-1)
 						.css({
@@ -191,108 +206,64 @@ function loadFullpage (){
 				}
 
 				if(nextIndex == 5){
-					showWeare();
+					$('.section.fp-section').eq(index-1)
+						.css({
+								'z-index': 1,
+							   'animation': 'animFrom1To5_1 0.7s',
+							   'animation-timing-function': 'cubic-bezier(0.47, 0, 0.745, 0.715)'
+							});
+							setTimeout(function() {
+								$('.section.fp-section').eq(index-1).css('z-index', 0);
+							}, 600);
 
-					
+					$('.section.fp-section').eq(index)
+						.css('z-index', 1)
+						.css('transform', 'translateY(0vh)')
+						.css('animation-timing-function', 'cubic-bezier(0.25, 0.46, 0.45, 0.94)')
+						.css('animation', 'animFrom1To5_2 1.4s');
+						setTimeout(function() {
+							$('.section.fp-section').eq(index).css('transform', 'translateY(-170vh)');
+						}, 1400);
 
-					//  ===================================
+					$('.section.fp-section').eq(index+1)
+						.css('transform', 'translateY(-100vh)')
+						.css({
+								'z-index': 1,
+							   'animation': 'animFrom1To5_3 1.1s 0.4s',
+							   'animation-timing-function': 'cubic-bezier(0.39, 0.575, 0.565, 1)',
+						    });
+							setTimeout(function() {
+								$('.section.fp-section').eq(index+1).css('transform', 'translateY(-270vh)');
+							}, 1550);
 
-					// var index3start = false;
-					// var index4start = false;
-					// var index5start = false;
-
-					// $('.section.fp-section').eq(index-1)
-					// 	.css('z-index', 1)
-					// 	.velocity({ 
-					// 			translateY: ['-100vh', '0']	
-					// 		}, {
-					// 			duration: 850,
-					// 			easing: [0.55, 0.085, 0.68, 0.53]
-					// 		});
-
-					// $('.section.fp-section').eq(index)
-					// 	.css('z-index', 1)
-					// 	.velocity({ 
-					// 			translateY: ['-200vh', '0vh'] 
-					// 		}, {
-					// 			duration: 1150,
-					// 			easing: [0.55, 0.085, 0.68, 0.53],
-					// 			progress: function(elements, c, r, s, t) {
-					// 				if(c > 0.45 && !index3start) {
-					// 					index3start = true;
-					// 					from1to3();
-					// 				}
-					// 			}
-					// 		});
-
-
-					// $('.section.fp-section').eq(index+1)
-					// 	.css('z-index', 0);
-
-					// $('.section.fp-section').eq(nextIndex-2)
-					// 	.css('z-index', 0);
-
-					// $('.section.fp-section').eq(nextIndex-1)
-					// 	.css('z-index', 0);
+					$('.section.fp-section').eq(index+2)
+						.css('transform', 'translateY(-200vh)')
+						.css({
+								'z-index': 1,
+							   'animation': 'animFrom1To5_4 1.1s 0.8s',
+							   'animation-timing-function': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+						    });
+							setTimeout(function() {
+								$('.section.fp-section').eq(index+2).css('transform', 'translateY(-370vh)');
+							}, 1900);
 
 
-					// function from1to3() {
-					// 	$('.section.fp-section').eq(index+1)						
-					// 		.velocity({ 
-					// 				translateY: ['-300vh', '-100vh'] 
-					// 			},{
-					// 				duration: 800,
-					// 				// delay: 400,
-					// 				easing: [0.55, 0.085, 0.68, 0.53],
-					// 				progress: function(elements, c, r, s, t) {
-					// 					if(c > 0.22 && !index4start) {
-					// 						index4start = true;
-					// 						$(this).css('z-index', 1)
-					// 						from1to4();
-					// 					}
-					// 				}
-					// 			});	
-					// }
-
-					// function from1to4() {
-					// 	$('.section.fp-section').eq(nextIndex-2).velocity({ 
-					// 			translateY: ['-400vh', '-200vh']
-					// 		}, {
-					// 			duration: 700, 
-					// 			// delay: 470,
-					// 			easing: [0.55, 0.085, 0.68, 0.53],
-					// 			progress: function(elements, c, r, s, t) {
-					// 				if (c > 0.01 && !index5start){
-					// 					index5start = true;
-					// 					$(this).css('z-index', 1);
-					// 					from1to5();
-					// 				}
-					// 			},
-					// 			complete: function() { hideWeare(); hideShowreel();}
-					// 	});	
-					// }
-
-					// function from1to5() {
-					// 	$('.section.fp-section').eq(nextIndex-1).velocity({ 
-					// 			translateY: ['-400vh', '-300vh']
-					// 		}, {
-					// 			duration: 620, 
-					// 			// delay: 470,
-					// 			easing: [0.55, 0.085, 0.68, 0.53],
-					// 			progress: function(elements, c, r, s, t) {
-					// 				if (c > 0.1)
-					// 				$(this).css('z-index', 1)
-					// 			},
-					// 			complete: function() { hideWeare(); hideShowreel();}
-					// 	});	
-					// }
+					$('.section.fp-section').eq(nextIndex-1)
+						.css('transform', 'translateY(-300vh)')
+						.css({
+								'z-index': 1,
+							   'animation': 'animFrom1To5_5 0.7s 1s',
+							   'animation-timing-function': 'cubic-bezier(0.39, 0.575, 0.565, 1)'
+						    });
+							setTimeout(function() {
+								$('.section.fp-section').eq(nextIndex-1).css('transform', 'translateY(-400vh)');
+							}, 1700);
 				}
 			}
 			
 // Leaving 2. WE ARE =============================
 			if(index == 2 && direction =='down'){
 				setTimeout(function() {
-					hideWeare();
 					$('#section_weare .wrap_screen').velocity("stop");
 					$('.box_outerRing.pulseCenter').removeClass('animatePulse');
 					$('.box_outerRing.pulseSide').removeClass('animatePulse');
@@ -300,6 +271,8 @@ function loadFullpage (){
 				
 
 				if(nextIndex == 3){
+					hideShowreel();
+					showShowreel();
 					$('.section.fp-section').eq(index-1)
 							.css({
 									'z-index': 1,
@@ -320,7 +293,6 @@ function loadFullpage (){
 
 
 				if(nextIndex == 4){
-					showShowreel();
 					hideClients();
 					setTimeout(showClients, 700);
 
@@ -354,10 +326,6 @@ function loadFullpage (){
 				}
 
 				if(nextIndex == 5){
-					setTimeout(hideWeare, 700);
-					showShowreel();
-					showClients();
-
 					$('.section.fp-section').eq(index-1)
 						.css({
 								'z-index': 1,
@@ -403,12 +371,14 @@ function loadFullpage (){
 			}
 
 			else if(index == 2 && direction == 'up'){
-				setTimeout(hideWeare, 700);
 				$('#section_weare .wrap_screen').velocity("stop");
 				$('.box_outerRing.pulseCenter').removeClass('animatePulse');
 				$('.box_outerRing.pulseSide').removeClass('animatePulse');
 
 				if(nextIndex == 1){
+					hideIntro();
+					showIntro();
+
 					$('.section.fp-section').eq(nextIndex-1)
 							.css({
 									'z-index': 2,
@@ -431,9 +401,8 @@ function loadFullpage (){
 			
 // Leaving 3. SHOWREEL ====================================
 			if(index == 3 && direction =='down'){
-				setTimeout(hideShowreel, 700);
-
 				if(nextIndex == 4){
+					hideClients();
 					showClients();
 
 					$('.section.fp-section').eq(index-1)
@@ -454,8 +423,6 @@ function loadFullpage (){
 				}
 
 				if(nextIndex == 5){
-					showClients();
-
 					$('.section.fp-section').eq(index-1)
 						.css({
 								'z-index': 3,
@@ -487,8 +454,6 @@ function loadFullpage (){
 			}
 
 			else if(index == 3 && direction == 'up'){
-				setTimeout(hideShowreel, 700);
-
 				if(nextIndex == 2){
 					hideWeare();
 					showWeare();
@@ -513,8 +478,8 @@ function loadFullpage (){
 
 
 				if(nextIndex == 1){
-					showWeare();
-					setTimeout(hideWeare, 1500);
+					hideIntro();
+					setTimeout(showIntro, 700);
 
 					$('.section.fp-section').eq(index-1)
 						.css({
@@ -548,7 +513,8 @@ function loadFullpage (){
 			
 // Leaving 4. CLIENTS =================================
 			if(index == 4 && direction =='down'){
-				setTimeout(hideClients, 700);
+				// showProcess();
+				// setTimeout(showTree(), 700);
 				$('.wrap_clients').velocity("stop");
 
 				$('.section.fp-section').eq(index-1)
@@ -570,52 +536,52 @@ function loadFullpage (){
 			}
 
 			else if(index == 4 && direction == 'up'){
-				setTimeout(hideClients, 700);
 				$('.wrap_clients').velocity("stop");
 
 
 				if(nextIndex == 1){
-					showWeare();
+					hideIntro();
+					setTimeout(showIntro, 1100);
 
 					$('.section.fp-section').eq(index-1)
-						.css({
-								'z-index': 1,
-							   'animation': 'animFrom4To1_4 0.7s',
-							   'animation-timing-function': 'cubic-bezier(0.47, 0, 0.745, 0.715)'
-							});
+							.css({
+									'z-index': 1,
+								   'animation': 'animFrom4To1_4 0.7s',
+								   'animation-timing-function': 'cubic-bezier(0.47, 0, 0.745, 0.715)'
+								});
 							setTimeout(function() {
 								$('.section.fp-section').eq(index-1).css('z-index', 0);
 							}, 600);
 
 					$('.section.fp-section').eq(index-2)
-						.css('z-index', 2)
-						.css('transform', 'translateY(-300vh)')
-						.css('animation-timing-function', 'cubic-bezier(0.25, 0.46, 0.45, 0.94)')
-						.css('animation', 'animFrom4To1_3 1.4s');
-						setTimeout(function() {
-							$('.section.fp-section').eq(index).css('z-index', 0);
-							$('.section.fp-section').eq(index).css('transform', 'translateY(-130vh)');
-						}, 1400);
+							.css('z-index', 2)
+							.css('transform', 'translateY(-300vh)')
+							.css('animation-timing-function', 'cubic-bezier(0.25, 0.46, 0.45, 0.94)')
+							.css('animation', 'animFrom4To1_3 1.4s');
+							setTimeout(function() {
+								$('.section.fp-section').eq(index).css('z-index', 0);
+								$('.section.fp-section').eq(index).css('transform', 'translateY(-130vh)');
+							}, 1400);
 
 					$('.section.fp-section').eq(index-3)
-						.css('transform', 'translateY(-200vh)')
-						.css({
-								'z-index': 3,
-							   'animation': 'animFrom4To1_2 1.1s 0.4s',
-							   'animation-timing-function': 'cubic-bezier(0.39, 0.575, 0.565, 1)',
-						    });
+							.css('transform', 'translateY(-200vh)')
+							.css({
+									'z-index': 3,
+								   'animation': 'animFrom4To1_2 1.1s 0.4s',
+								   'animation-timing-function': 'cubic-bezier(0.39, 0.575, 0.565, 1)',
+							    });
 							setTimeout(function() {
 								$('.section.fp-section').eq(index+1).css('z-index', 0);
 								$('.section.fp-section').eq(index+1).css('transform', 'translateY(0vh)');
 							}, 1550);
 
 					$('.section.fp-section').eq(nextIndex-1)
-						.css('transform', 'translateY(-100vh)')
-						.css({
-								'z-index': 4,
-							   'animation': 'animFrom4To1_1 .9s 0.7s',
-							   'animation-timing-function': 'cubic-bezier(0.39, 0.575, 0.565, 1)'
-						    });
+							.css('transform', 'translateY(-100vh)')
+							.css({
+									'z-index': 4,
+								   'animation': 'animFrom4To1_1 .9s 0.7s',
+								   'animation-timing-function': 'cubic-bezier(0.39, 0.575, 0.565, 1)'
+							    });
 							setTimeout(function() {
 								$('.section.fp-section').eq(nextIndex-1).css('transform', 'translateY(0vh)');
 							}, 1600);
@@ -624,34 +590,32 @@ function loadFullpage (){
 
 				if(nextIndex == 2){
 					hideWeare();
-					showShowreel();
-					setTimeout(showWeare, 500);
-					setTimeout(hideShowreel, 700);
+					setTimeout(showWeare, 400);
 
 					$('.section.fp-section').eq(index-1)
-						.css({
-								'z-index': 3,
-							   'animation': 'animFrom4To2_4 0.8s',
-							   'animation-timing-function': 'cubic-bezier(0.645, 0.045, 0.355, 1)'
-							});
+							.css({
+									'z-index': 3,
+								   'animation': 'animFrom4To2_4 0.8s',
+								   'animation-timing-function': 'cubic-bezier(0.645, 0.045, 0.355, 1)'
+								});
 							setTimeout(function() {
 								$('.section.fp-section').eq(index-1).css('z-index', 0);
 							}, 800);
 
 					$('.section.fp-section').eq(index-2)
-						.css('z-index', 1)
-						.css('animation', 'animFrom4To2_3 1.5s 0.17s');
-						setTimeout(function() {
-							$('.section.fp-section').eq(index-2).css('z-index', 0);
-						}, 1670);
+							.css('z-index', 1)
+							.css('animation', 'animFrom4To2_3 1.5s 0.17s');
+							setTimeout(function() {
+								$('.section.fp-section').eq(index-2).css('z-index', 0);
+							}, 1670);
 
 					$('.section.fp-section').eq(nextIndex-1)
-						.css('transform', 'translateY(-300vh)')
-						.css({
-								'z-index': 2,
-							   'animation': 'animFrom4To2_2 0.8s 0.4s',
-							   'animation-timing-function': 'cubic-bezier(0.645, 0.045, 0.355, 1)',
-						    });
+							.css('transform', 'translateY(-300vh)')
+							.css({
+									'z-index': 2,
+								   'animation': 'animFrom4To2_2 0.8s 0.4s',
+								   'animation-timing-function': 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+							    });
 							setTimeout(function() {
 								$('.section.fp-section').eq(nextIndex-1).css('transform', 'translateY(-100vh)');
 							}, 1200);	
@@ -659,6 +623,8 @@ function loadFullpage (){
 
 
 				if(nextIndex == 3){
+					hideShowreel();
+					showShowreel();
 					$('.section.fp-section').eq(nextIndex-1)
 							.css({
 									'z-index': 2,
@@ -690,100 +656,65 @@ function loadFullpage (){
 				disableParticles(1);
 				disableParticles(2);
 				disableParticles(3);
+				disableParticles(4);
 
-				hideClients();
-				showClients();
-
-
+				
 				if(nextIndex == 1){
-					showWeare();
-					
-					var index1start = false;
-					var index2start = false;
-					var index3start = false;
+					hideIntro();
+					setTimeout(hideIntro, 1500);
 
 					$('.section.fp-section').eq(index-1)
-						.css('z-index', 1)
-						.velocity({ 
-								translateY: ['-300vh', '-400vh']	
-							}, {
-								duration: 850,
-								easing: [0.55, 0.085, 0.68, 0.53]
+						.css({
+								'z-index': 1,
+							   'animation': 'animFrom5To1_5 0.7s',
+							   'animation-timing-function': 'cubic-bezier(0.47, 0, 0.745, 0.715)'
 							});
+							setTimeout(function() {
+								$('.section.fp-section').eq(index-1).css('z-index', 0);
+							}, 600);
 
 					$('.section.fp-section').eq(index-2)
 						.css('z-index', 2)
-						.velocity({ 
-								translateY: ['-200vh', '-400vh'] 
-							}, {
-								duration: 1150,
-								easing: [0.55, 0.085, 0.68, 0.53],
-								progress: function(elements, c, r, s, t) {
-									if(c > 0.45 && !index3start) {
-										index3start = true;
-										from5to3();
-									}
-								}
-							});
-
+						.css('transform', 'translateY(0vh)')
+						.css('animation-timing-function', 'cubic-bezier(0.25, 0.46, 0.45, 0.94)')
+						.css('animation', 'animFrom5To1_4 1.4s');
+						setTimeout(function() {
+							$('.section.fp-section').eq(index-2).css('transform', 'translateY(-170vh)');
+						}, 1400);
 
 					$('.section.fp-section').eq(index-3)
-						.css('z-index', 0);
+						.css('transform', 'translateY(-100vh)')
+						.css({
+								'z-index': 3,
+							   'animation': 'animFrom5To1_3 1.1s 0.4s',
+							   'animation-timing-function': 'cubic-bezier(0.39, 0.575, 0.565, 1)',
+						    });
+							setTimeout(function() {
+								$('.section.fp-section').eq(index-3).css('transform', 'translateY(-270vh)');
+							}, 1550);
 
-					$('.section.fp-section').eq(nextIndex-2)
-                  .css('z-index', 0);
+					$('.section.fp-section').eq(index-4)
+						.css('transform', 'translateY(-200vh)')
+						.css({
+								'z-index': 4,
+							   'animation': 'animFrom5To1_2 1.1s 0.8s',
+							   'animation-timing-function': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+						    });
+							setTimeout(function() {
+								$('.section.fp-section').eq(index-4).css('transform', 'translateY(0vh)');
+							}, 1900);
+
 
 					$('.section.fp-section').eq(nextIndex-1)
-						.css('z-index', 0);
-
-
-					function from5to3() {
-						$('.section.fp-section').eq(index-3)						
-							.velocity({ 
-									translateY: ['-100vh', '-300vh'] 
-								},{
-									duration: 800,
-									easing: [0.55, 0.085, 0.68, 0.53],
-									progress: function(elements, c, r, s, t) {
-										if(c > 0.3 && !index2start) {
-											index2start = true;
-											$(this).css('z-index', 3);
-											from5to2();
-										}
-									}
-								});	
-					}
-
-					function from5to2() {
-						$('.section.fp-section').eq(nextIndex).velocity({ 
-								translateY: ['0vh', '-200vh']
-							}, {
-								duration: 720,
-								easing: [0.55, 0.085, 0.68, 0.53],
-								progress: function(elements, c, r, s, t) {
-									if (c > 0.01 && !index1start){
-                              index1start = true;
-                              $(this).css('z-index', 4);
-                              from5to1();
-                           }
-								},
-								complete: function() { hideWeare(); hideShowreel();}
-						});	
-					}
-
-
-               function from5to1() {
-                  $('.section.fp-section').eq(nextIndex-1).velocity({ 
-                        translateY: ['0vh', '-100vh']
-                     }, {
-                        duration: 520,
-                        progress: function(elements, c, r, s, t) {
-                           if (c > 0.1)
-                           $(this).css('z-index', 5)
-                        },
-                        complete: function() { hideWeare(); hideShowreel();}
-                  });   
-               }
+						.css('transform', 'translateY(100vh)')
+						.css({
+								'z-index': 5,
+							   'animation': 'animFrom5To1_1 0.7s 1s',
+							   'animation-timing-function': 'cubic-bezier(0.39, 0.575, 0.565, 1)'
+						    });
+							setTimeout(function() {
+								$('.section.fp-section').eq(nextIndex-1).css('transform', 'translateY(0vh)');
+							}, 1700);
 				}
 
 
@@ -809,8 +740,8 @@ function loadFullpage (){
 						.css('animation-timing-function', 'cubic-bezier(0.25, 0.46, 0.45, 0.94)')
 						.css('animation', 'animFrom5To2_4 1.4s');
 						setTimeout(function() {
-							$('.section.fp-section').eq(index).css('z-index', 0);
-							$('.section.fp-section').eq(index).css('transform', 'translateY(-130vh)');
+							$('.section.fp-section').eq(index-2).css('z-index', 0);
+							$('.section.fp-section').eq(index-2).css('transform', 'translateY(-230vh)');
 						}, 1400);
 
 					$('.section.fp-section').eq(index-3)
@@ -819,10 +750,10 @@ function loadFullpage (){
 								'z-index': 3,
 							   'animation': 'animFrom5To2_3 1.1s 0.4s',
 							   'animation-timing-function': 'cubic-bezier(0.39, 0.575, 0.565, 1)',
-						    });
+						   });
 							setTimeout(function() {
-								$('.section.fp-section').eq(index+1).css('z-index', 0);
-								$('.section.fp-section').eq(index+1).css('transform', 'translateY(-100vh)');
+								$('.section.fp-section').eq(index-3).css('z-index', 0);
+								$('.section.fp-section').eq(index-3).css('transform', 'translateY(-100vh)');
 							}, 1550);
 
 					$('.section.fp-section').eq(nextIndex-1)
@@ -831,7 +762,7 @@ function loadFullpage (){
 								'z-index': 4,
 							   'animation': 'animFrom5To2_2 .9s 0.7s',
 							   'animation-timing-function': 'cubic-bezier(0.39, 0.575, 0.565, 1)'
-						    });
+						   });
 							setTimeout(function() {
 								$('.section.fp-section').eq(nextIndex-1).css('transform', 'translateY(-100vh)');
 							}, 1600);
@@ -873,6 +804,9 @@ function loadFullpage (){
 				}
 
 				if(nextIndex == 4){
+					hideClients();
+					showClients();
+
 					$('.section.fp-section').eq(nextIndex-1)
 							.css({
 									'z-index': 2,

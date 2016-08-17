@@ -49,9 +49,9 @@ function showTree(){
 
    setTimeout(function(){startIcicles()},3500); // START Icicles
 
-   setTimeout(function(){enableParticles(0)},10);
-   setTimeout(function(){enableParticles(1)},10);
-   setTimeout(function(){enableParticles(2)},10);
+   // setTimeout(function(){enableParticles(0)},10);
+   // setTimeout(function(){enableParticles(1)},10);
+   // setTimeout(function(){enableParticles(2)},10);
    statusParticles[0] = true;
    statusParticles[1] = true;
    statusParticles[2] = true;

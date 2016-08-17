@@ -1086,3 +1086,49 @@ stroke: #e24036;
 	0%	  { transform: translateY(-200vh);}
 	100% { transform: translateY(-100vh);}
 }
+
+
+/*  ================ DOWN / 3 JUMP ================  */
+@keyframes animFrom1To5_1 {
+	0%	  { transform: translateY(0vh);  }
+	100% { transform: translateY(-70vh);}
+}
+@keyframes animFrom1To5_2 {
+	0%	  { transform: translateY(0vh); }
+	100% { transform: translateY(-170vh);}
+}
+@keyframes animFrom1To5_3 {
+	0%	  { transform: translateY(-100vh);}
+	100% { transform: translateY(-270vh);}
+}
+@keyframes animFrom1To5_4 {
+	0%	  { transform: translateY(-200vh);}
+	100% { transform: translateY(-370vh);}
+}
+@keyframes animFrom1To5_5 {
+	0%	  { transform: translateY(-300vh);}
+	100% { transform: translateY(-400vh);}
+}
+
+
+/*  ================ UP / 3 JUMP ================  */
+@keyframes animFrom5To1_5 {
+	0%	  { transform: translateY(-400vh);  }
+	100% { transform: translateY(-300vh);}
+}
+@keyframes animFrom5To1_4 {
+	0%	  { transform: translateY(-400vh); }
+	100% { transform: translateY(-230vh);}
+}
+@keyframes animFrom5To1_3 {
+	0%	  { transform: translateY(-300vh);}
+	100% { transform: translateY(-130vh);}
+}
+@keyframes animFrom5To1_2 {
+	0%	  { transform: translateY(-200vh);}
+	100% { transform: translateY(-30vh);}
+}
+@keyframes animFrom5To1_1 {
+	0%	  { transform: translateY(-100vh);}
+	100% { transform: translateY(0vh);}
+}
