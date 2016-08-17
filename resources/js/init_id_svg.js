@@ -17,8 +17,10 @@ function modifyFPNav() {
 
    $("#fp-nav").append("<svg viewBox='0 0 28 107'>");
 
+   var valCy = 14;
 
-   $("#fp-nav svg").append(makeSVG("circle" , {class: 'circleNav', cy: '14', cx: '14', r: '0'}));
+
+   $("#fp-nav svg").append(makeSVG("circle" , {class: 'circleNav', cy: valCy, cx: '14', r: '0'}));
    $("#fp-nav svg .circleNav:first-child")
       .attr('r', 5)
       .css('stroke', "#e44036")
@@ -27,9 +29,9 @@ function modifyFPNav() {
 
    $("#fp-nav ul li").each(function() {
       $("#fp-nav svg").append(makeSVG("g", {id: '' + $(this).index()}));
-      $("#fp-nav svg").find("g[id=" + $(this).index() + "]").append(makeSVG("circle" , {class: 'circleNav', cy: '14', cx: '14', r: '0'}));
-      $("#fp-nav svg").find("g[id=" + $(this).index() + "]").append(makeSVG("circle" , {class: 'circleInner', cy: '14', cx: '14', r: '2.6'}));
-      $("#fp-nav svg").find("g[id=" + $(this).index() + "]").append(makeSVG("circle" , {class: 'strokeInner', cy: '14', cx: '14', r: '3'}));
+      $("#fp-nav svg").find("g[id=" + $(this).index() + "]").append(makeSVG("circle" , {class: 'circleNav', cy: valCy, cx: '14', r: '0'}));
+      $("#fp-nav svg").find("g[id=" + $(this).index() + "]").append(makeSVG("circle" , {class: 'circleInner', cy: valCy, cx: '14', r: '2.6'}));
+      $("#fp-nav svg").find("g[id=" + $(this).index() + "]").append(makeSVG("circle" , {class: 'strokeInner', cy: valCy, cx: '14', r: '3'}));
       valCy+=20;
    });
 }
