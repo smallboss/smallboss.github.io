@@ -114,38 +114,38 @@ $( document ).ready(function() {
       }
 
       // waypoint particles ============
-      if (true_waypoint > waypoint_particles_3 && statusParticles[0]) {
-         statusParticles[0] = false;
-         disableParticles(0);
-         statusParticles[3] = true;
-         enableParticles(3);
-         console.log('x0');
-      }
+      // if (true_waypoint > waypoint_particles_3 && statusParticles[0]) {
+      //    statusParticles[0] = false;
+      //    disableParticles(0);
+      //    statusParticles[3] = true;
+      //    enableParticles(3);
+      //    console.log('x0');
+      // }
 
-      if (true_waypoint > waypoint_particles_4 && statusParticles[1]) {
-         statusParticles[1] = false;
-         disableParticles(1);
-         statusParticles[4] = true;
-         enableParticles(4);
-         console.log('x1');
-      }
+      // if (true_waypoint > waypoint_particles_4 && statusParticles[1]) {
+      //    statusParticles[1] = false;
+      //    disableParticles(1);
+      //    statusParticles[4] = true;
+      //    enableParticles(4);
+      //    console.log('x1');
+      // }
 
 
-      if (true_waypoint < waypoint_particles_3 && statusParticles[3]) {
-         statusParticles[3] = false;
-         disableParticles(3);
-         statusParticles[0] = true;
-         enableParticles(0);
-         console.log('x3');
-      }
+      // if (true_waypoint < waypoint_particles_3 && statusParticles[3]) {
+      //    statusParticles[3] = false;
+      //    disableParticles(3);
+      //    statusParticles[0] = true;
+      //    enableParticles(0);
+      //    console.log('x3');
+      // }
 
-      if (true_waypoint < waypoint_particles_4 && statusParticles[4]) {
-         statusParticles[4] = false;
-         disableParticles(4);
-         statusParticles[1] = true;
-         enableParticles(1);
-         console.log('x4');
-      }
+      // if (true_waypoint < waypoint_particles_4 && statusParticles[4]) {
+      //    statusParticles[4] = false;
+      //    disableParticles(4);
+      //    statusParticles[1] = true;
+      //    enableParticles(1);
+      //    console.log('x4');
+      // }
       // END waypoint particles ========
 
       // console.log(true_waypoint + " :WP");
