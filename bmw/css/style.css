@@ -521,7 +521,7 @@ hr.line-moto-name {
 
 .moto-data-list {
     color: #898d98;
-    padding-left: 12px;
+    padding-left: 3px;
     margin: 0;
 }
 
@@ -530,11 +530,17 @@ hr.line-moto-name {
     position: relative;
 }
 
-.moto-data-list li:before {
+.list-arrow {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
+
+.list-arrow:before {
     content: '\25ba';
     font-size: 8px;
     position: absolute;
-    left: -10px;
+    left: 0px;
     top: 5px;
 }
 
