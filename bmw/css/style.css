@@ -41,6 +41,7 @@ body {
 
 .prev,
 .next {
+    position: absolute;
     height: 40px;
     width: 40px;
     background: url(../images/arrow_left.jpg) center center no-repeat;
@@ -291,7 +292,6 @@ section.banner {
 
 .banner .next,
 .banner .prev {
-    position: absolute;
     left: 0;
     cursor: pointer;
     top: 50%;
@@ -317,7 +317,7 @@ section.banner {
 }
 
 .right-menu {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 20%;
     padding: 0 10px;
@@ -1302,13 +1302,14 @@ a#toTop {
 .waterwheel-nav .prev,
 .waterwheel-nav .next {
     position: absolute;
-    transform: translateY(50%);
 }
 
 .waterwheel-nav .prev {
     left: 5px;
+    transform: translateY(50%);
 }
 
 .waterwheel-nav .next {
     right: 5px;
+    transform: translateY(50%) rotate(180deg);
 }
