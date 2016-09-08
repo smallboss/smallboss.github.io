@@ -216,7 +216,7 @@ ul.head-list li a:hover {
 }
 
 @media screen and (max-width: 960px) {
-/*    ul.head-list li {
+    ul.head-list li {
         display: block;
         margin: 0;
         transition-duration: 0.3s
@@ -265,7 +265,7 @@ ul.head-list li a:hover {
 
     .show-menu a {
         font-size: 18px;
-    }*/
+    }
 }
 
 @media screen and (max-width: 480px) {
