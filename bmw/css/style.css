@@ -216,7 +216,7 @@ ul.head-list li a:hover {
 }
 
 @media screen and (max-width: 960px) {
-    ul.head-list li {
+/*    ul.head-list li {
         display: block;
         margin: 0;
         transition-duration: 0.3s
@@ -234,7 +234,6 @@ ul.head-list li a:hover {
 
     ul.head-list a {
         padding: 0 14px;
-        /*transition-duration: 0.3s*/
     }
 
     .searchForm {
@@ -265,8 +264,14 @@ ul.head-list li a:hover {
     }
 
     .show-menu a {
-        height: 60px;
         font-size: 18px;
+    }*/
+}
+
+@media screen and (max-width: 480px) {
+    ul.head-list li a {
+        font-size: 13px;
+        line-height: 45px;
     }
 }
 
@@ -1264,7 +1269,7 @@ a#toTop {
     height: 40px;
     background: url(../images/toTop.jpg) center center no-repeat;
     opacity: 0;
-    z-index: 20;
+    z-index: 14;
     background-size: cover;
     box-shadow: 0px 0px 7px 0.5px rgba(0,0,0,0.75);
 }
