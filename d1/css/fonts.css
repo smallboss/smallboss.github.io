@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'MuseoSansCyrl';
+    font-weight: 100;
+    src: local("MuseoSansCyrl"),
+    url(../fonts/MuseoSansCyrl_100.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'MuseoSansCyrl';
+    font-weight: 300;
+    src: local("MuseoSansCyrl"),
+    url(../fonts/MuseoSansCyrl_300.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'MuseoSansCyrl';
+    font-weight: 500;
+    src: local("MuseoSansCyrl"),
+    url(../fonts/MuseoSansCyrl_500.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'MuseoSansCyrl';
+    font-weight: 700;
+    src: local("MuseoSansCyrl"),
+    url(../fonts/MuseoSansCyrl_700.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'MuseoSansCyrl';
+    font-weight: 900;
+    src: local("MuseoSansCyrl"),
+    url(../fonts/MuseoSansCyrl_900.otf) format("opentype");
+}
+
+.MuseoSans100 {
+    font-family: 'MuseoSansCyrl', sans-serif;
+    font-weight: 100;
+}
+
+.MuseoSans300 {
+    font-family: 'MuseoSansCyrl', sans-serif;
+    font-weight: 300;
+}
+
+.MuseoSans500 {
+    font-family: 'MuseoSansCyrl', sans-serif;
+    font-weight: 500;
+}
+
+.MuseoSans700 {
+    font-family: 'MuseoSansCyrl', sans-serif;
+    font-weight: 700;
+}
+
+.MuseoSans900 {
+    font-family: 'MuseoSansCyrl', sans-serif;
+    font-weight: 900;
+}
