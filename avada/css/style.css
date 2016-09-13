@@ -177,8 +177,7 @@ img.logo {
 img.phone {
     margin-left: 24px;
     margin-right: 20px;
-    margin-top: 10px;
-    float: left;
+    vertical-align: baseline;
 }
 
 
@@ -186,14 +185,16 @@ img.phone {
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 600;
-    float: left;
     padding: 8px 30px;
-    margin-top: 6px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    margin-left: 65px;
 }
 
 
 .numbs {
-    float: left;
+    display: inline-block;
 }
 
 .numbs-wrap {
@@ -377,7 +378,10 @@ img.phone {
 
     img.phone {
         width: 0;
-        margin: 16px 8px;
+        margin-left: 24px;
+        margin-right: 20px;
+        margin-top: -23px;
+        display: inline-block;
     }
 
     .numb {
