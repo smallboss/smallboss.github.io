@@ -572,6 +572,13 @@ hr.under-title {
     font-style: 16px;
 }
 
+@media screen and (max-width: 992px) {
+    .newObj-link-wrap:before {
+        top: -65px;
+        border-bottom: 65px solid #30618a;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .newObj-link-wrap:before {
         top: -20px;
