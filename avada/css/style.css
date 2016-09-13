@@ -869,3 +869,10 @@ ul.ftr-menu li a:hover {
     margin: auto;
     margin-bottom: 20px;
 }
+
+@media screen and (max-width: 544px) {
+    .modal-title {
+        font-size: 26px;
+        margin-top: 12px;
+    }
+}
