@@ -337,11 +337,6 @@ img.phone {
     header { 
         position: relative;
     }
-    
-    .calls-wrap {
-        padding-left: 138px;
-        margin-left: -138px;
-    }
 
     ul.main-menu {
         position: absolute;
@@ -371,8 +366,8 @@ img.phone {
     }
 
     .calls-wrap {
-        padding-left: 140px;
-        margin-left: -140px;
+        padding-left: 136px;
+        margin-left: -136px;
         margin-top: 1px;
     }
 
