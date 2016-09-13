@@ -142,7 +142,7 @@ ul.main-menu {
     padding: 0;
     text-align: right;
     clear: right;
-    margin-top: 87px;
+    margin-top: 17px;
     z-index: 500;
 }
 
@@ -214,7 +214,7 @@ img.phone {
 }
 
 .calls-wrap {
-    float: right;
+    text-align: right;
     margin-top: 26px;
 }
 
@@ -304,21 +304,24 @@ img.phone {
 }
 
 @media screen and (max-width: 1200px) {
-    .ul.main-menu li { margin-left: 55px; }
+    ul.main-menu li { margin-left: 70px; }
 }
 
 @media screen and (max-width: 992px) {
     .numbs-wrap { margin-right: 30px; }
     ul.main-menu li { margin-left: 26px; }
+    .callback.bttn { margin-left: 5px; }
+    ul.main-menu { margin-top: 17px; }
 }
 
 @media screen and (max-width: 768px) {
-    .callback.bttn { float: right; }
+    .callback.bttn { margin-left: 135px; }
     .calls-wrap {
         width: 100%;
         padding-left: 145px;
         margin-left: -145px;
-        margin-top: 1px;
+        margin-top: 2px;
+        float: right;
     }
 
     .numbs-wrap { 
@@ -358,6 +361,10 @@ img.phone {
         overflow: hidden;
     }
 
+    .numbs {
+        margin-left: 6px;
+    }
+
     .calls-wrap {
         padding-left: 140px;
         margin-left: -140px;
@@ -365,7 +372,6 @@ img.phone {
     }
 
     .numbs-wrap {
-        margin-left: 0;
         font-size: 10px;
     }
 
@@ -374,14 +380,12 @@ img.phone {
         padding: 3px 7px;
         float: right;
         clear: both;
+        margin: 0;
+        margin-left: 6px;
     }
 
     img.phone {
-        width: 0;
-        margin-left: 24px;
-        margin-right: 20px;
-        margin-top: -23px;
-        display: inline-block;
+        display: none;
     }
 
     .numb {
