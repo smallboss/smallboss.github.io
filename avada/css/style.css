@@ -660,6 +660,12 @@ hr.under-title {
     letter-spacing: -0.25px;
 }
 
+@media screen and (max-width: 544px) {
+    .main-text-title {
+        font-size: 22px;
+    }
+}
+
 /* ================================ FOOTER  ================================*/
 footer {
     height: 250px;
