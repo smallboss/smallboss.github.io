@@ -7,10 +7,18 @@ $(window).ready(function(){
     });
 
 
-    var minHeight = $('#main-text').height() 
+
+    var minHeight = $('#main-text').height();
     $('#main-text').css('height', 'auto');
     var autoHeight = $('#main-text').height();
     $('#main-text').css('height', minHeight);
+
+    $( window ).resize(function() {
+        var minHeight = $('#main-text').height();
+        $('#main-text').css('height', 'auto');
+        var autoHeight = $('#main-text').height();
+        $('#main-text').css('height', minHeight);
+    });
 
 
     $('.learn-more').on('click', function() {
