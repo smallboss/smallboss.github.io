@@ -1,0 +1,17 @@
+{
+  "name": "avada",
+  "version": "1.0.0",
+  "description": "avada test",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "smallboss",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack-svgstore-plugin": "^3.0.3"
+  },
+  "dependencies": {
+    "webpack-svg-sprite-plugin": "^1.2.0"
+  }
+}

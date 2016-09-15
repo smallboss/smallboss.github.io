@@ -26,9 +26,11 @@ $(window).ready(function(){
 
         if(el.length) {
             el.animate({height: autoHeight}, 1000);
+            $(this).text('Спрятать текст');
         } else {
             var el = $('#main-text.show-mt');
             el.animate({height: minHeight}, 1000);
+            $(this).text('Читать подробнее');
         }
 
         el.toggleClass('show-mt hide-mt');

@@ -5,16 +5,22 @@ a#toTop {
     display: none;
     width: 40px;
     height: 40px;
-    background: url(../icons/Arrow\ top_Norm.svg) center center no-repeat;
     opacity: 0;
     z-index: 14;
 }
 
-a#toTop:hover {
-    background: url(../icons/Arrow\ top_Hover.svg) center center no-repeat;
+
+.toTop-arrow-norm, .toTop-arrow-hover {
+    height: 40px;
+    width: 40px;
 }
 
-/*object { display: none; }*/
+.toTop-arrow-norm { display: block; }
+.toTop-arrow-hover { display: none; }
+
+a#toTop:hover .toTop-arrow-norm { display: none; }
+a#toTop:hover .toTop-arrow-hover { display: block; }
+
 
 input, textarea, button {
     border-radius: 0 !important;
@@ -118,6 +124,12 @@ input, textarea, button {
     cursor: pointer;
 }
 
+@media screen and (max-width: 544px) {
+    #feedback-wrap {
+        display: none;
+    }
+}
+
 /* For modern browsers */
 .clearfix:before,
 .clearfix:after {
@@ -171,18 +183,19 @@ ul.main-menu li a:hover {
     border-bottom: 5px solid rgba(182, 192, 77, 1);
 }
 
-img.logo {
+.main-logo {
     float: left;
     margin-top: -5px;
+/*    width: 132px;
+    height: 140px;*/
 }
 
-img.phone {
+svg.phone {
     margin-left: 24px;
     margin-right: 20px;
     vertical-align: baseline;
-/*    display: inline-block;
-    height: 33.58px;
-    width: 26.89px;*/
+    width: 33.6px;
+    height: 27px
 }
 
 
@@ -286,6 +299,7 @@ img.phone {
     position: absolute;
     bottom: 0;
     width: 100%;
+    font-weight: 400;
 }
 
 
@@ -295,15 +309,29 @@ img.phone {
     width: 20px;
     display: block;
     height: 50px;
+    background-image: none;
+}
+
+.carousel-control .arrow {
+    height: 50px;
+}
+
+.navContainer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 
 .carousel-control.right {
-    background: url(../icons/Arrow.svg) center right no-repeat;
+    /*background: url(../icons/Arrow.svg) center right no-repeat;*/
+    background-image: none;
 }
 
 .carousel-control.left {
-    background: url(../icons/Arrow.svg) center right no-repeat;
+    /*background: url(../icons/Arrow.svg) center right no-repeat;*/
+    background-image: none;
     transform: rotate(180deg);
     float: left;
 }
@@ -389,7 +417,7 @@ img.phone {
         margin-left: 6px;
     }
 
-    img.phone {
+    svg.phone {
         display: none;
     }
 
@@ -523,7 +551,7 @@ hr.under-title {
     width: 20px;
     height: 13px;
     display: inline-block;
-    background: url(../icons/Arrow.svg) center center no-repeat;
+    /*background: url(../icons/Arrow.svg) center center no-repeat;*/
 }
 
 .newOnj-descr{
@@ -674,10 +702,11 @@ hr.under-title {
     text-align: center;
     line-height: 50px;
     margin-top: 64px;
-    font-family: OpenSans;
+    font-family: 'OpenSans';
+    font-weight: 300;
     font-style: italic;
     font-size: 16px;
-    letter-spacing: -0.25px;
+    letter-spacing: 0px;
 }
 
 @media screen and (max-width: 544px) {

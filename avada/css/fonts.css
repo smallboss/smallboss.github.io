@@ -1,9 +1,19 @@
 @font-face {
     font-family: 'OpenSans';
     font-style: italic;
+    font-weight: 400;
     src: local("OpenSans"),
     url(../fonts/OpenSans-Italic.ttf);
 }
+
+@font-face {
+    font-family: 'OpenSans';
+    font-style: italic;
+    font-weight: 300;
+    src: local("OpenSans"),
+    url(../fonts/open-sans.light-italic.ttf);
+}
+
 
 @font-face {
     font-family: 'OpenSans';
