@@ -25,6 +25,8 @@ class SearchField extends Component {
 
 
     handleEnter(event) {
+        console.log(event);
+        console.log(event.key);
         if(event.key === 'Enter'){
             this.handleSearchVideo();
         }
