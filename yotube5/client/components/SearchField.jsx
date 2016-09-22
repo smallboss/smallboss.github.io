@@ -25,7 +25,7 @@ class SearchField extends Component {
     render() {
         return (
             <div className='Editor row'>
-                <div className="edit-inner col-lg-4 col-md-7 col-sm-8 col-lg-12">
+                <div className="edit-inner col-lg-4 col-md-6 col-sm-6 col-lg-12">
                     <div className="input-group">
                         <input 
                             type="text" 
@@ -38,7 +38,8 @@ class SearchField extends Component {
                                 className="btn btn-default" 
                                 type="button"
                                 disabled={!this.state.text}
-                                onClick={this.handleSearchVideo}>Go!
+                                onClick={this.handleSearchVideo}>
+                                    <span className="glyphicon glyphicon-search" aria-hidden="true"></span>
                             </button>
                         </span>
                     </div>

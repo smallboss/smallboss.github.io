@@ -7,9 +7,6 @@ import {getVideoListByTitle} from '../actions/Actions.js';
 import SearchField from './SearchField.jsx';
 import VideoList from './VideoList.jsx';
 
-import './App.less';
-
-
 class App extends Component {
     constructor(props) {
         super(props);
