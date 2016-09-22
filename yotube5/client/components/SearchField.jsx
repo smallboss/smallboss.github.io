@@ -23,6 +23,7 @@ class SearchField extends Component {
         this.props.onSearchVideo(this.state.text);
     }
 
+
     handleEnter(event) {
         if(event.key === 'Enter'){
             this.handleSearchVideo();
