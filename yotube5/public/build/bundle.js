@@ -22817,7 +22817,7 @@
 /***/ function(module, exports) {
 
 	module.exports = {
-		"firstURL": "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5",
+		"firstURL": "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&type=video",
 		"firstURLVideo": "https://www.youtube.com/embed/",
 		"API_key": "AIzaSyABS8Q0QD0GoLbvz3tkjnazQLIXHuzRXCE"
 	};
