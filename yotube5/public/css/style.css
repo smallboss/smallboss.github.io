@@ -39,3 +39,36 @@ body {
 .VideoItem {
     margin-bottom: 25px;
 }
+
+
+@-moz-keyframes loadAnim {
+      from { background-position: 0px 0px; }
+      to {background-position: -6142px 0px;}
+}
+
+@-ms-keyframes loadAnim {
+      from { background-position: 0px 0px; }
+      to {background-position: -6142px 0px;}
+}
+
+@-webkit-keyframes loadAnim {
+      from { background-position: 0px 0px; }
+      to {background-position: -6142px 0px;}
+}
+
+
+.VideoItem iframe {
+    position: relative;
+}
+
+.loading {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    margin: auto;
+    width: 74px;
+    height: 74px;
+    background: url(../images/loadingSprite.png) 0px 0px no-repeat;
+    -webkit-animation: loadAnim 2.5s steps(83) infinite;
+    -moz-animation: loadAnim 2.5s steps(83, end) infinite;
+    -ms-animation: loadAnim 2.5s steps(83, end) infinite;
+}

@@ -23032,6 +23032,7 @@
 	            return _react2['default'].createElement(
 	                'div',
 	                { className: 'VideoItem col-lg-4 col-md-6 col-sm-6 col-xs-12' },
+	                _react2['default'].createElement('div', { className: 'loading' }),
 	                _react2['default'].createElement('iframe', {
 	                    width: '100%', height: '315',
 	                    src: _configJson2['default'].firstURLVideo + this.props.videoItem.id.videoId,
