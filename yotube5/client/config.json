@@ -1,0 +1,5 @@
+{
+    "firstURL": "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5",
+    "firstURLVideo": "https://www.youtube.com/embed/",
+    "API_key": "AIzaSyABS8Q0QD0GoLbvz3tkjnazQLIXHuzRXCE"
+}

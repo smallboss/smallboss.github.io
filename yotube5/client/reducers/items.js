@@ -1,4 +1,4 @@
-import Constants from '../constants/AppConstants.js'
+import Constants from '../AppConstants.js'
 
 export default function(state = [], action) {
     switch (action.type) {

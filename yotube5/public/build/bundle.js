@@ -62,23 +62,21 @@
 
 	var _componentsAppJsx2 = _interopRequireDefault(_componentsAppJsx);
 
-	var _stateState = __webpack_require__(212);
+	var _stateJs = __webpack_require__(212);
 
-	var _stateState2 = _interopRequireDefault(_stateState);
+	var _stateJs2 = _interopRequireDefault(_stateJs);
 
-	var _constantsAppConstantsJs = __webpack_require__(188);
+	var _AppConstantsJs = __webpack_require__(188);
 
-	var _constantsAppConstantsJs2 = _interopRequireDefault(_constantsAppConstantsJs);
+	var _AppConstantsJs2 = _interopRequireDefault(_AppConstantsJs);
 
 	_reactDom2['default'].render(_react2['default'].createElement(
 	    _reactRedux.Provider,
-	    { store: _stateState2['default'] },
+	    { store: _stateJs2['default'] },
 	    _react2['default'].createElement(_componentsAppJsx2['default'], null)
 	), document.getElementById('mount-point'));
 
-	_stateState2['default'].subscribe(function () {
-	    return console.log('New state', _stateState2['default'].getState());
-	});
+	// store.subscribe(() => console.log('New state', store.getState()));
 
 /***/ },
 /* 1 */
@@ -21521,7 +21519,7 @@
 
 	var _reactRedux = __webpack_require__(159);
 
-	var _actionsActionsJs = __webpack_require__(187);
+	var _ActionsJs = __webpack_require__(187);
 
 	var _SearchFieldJsx = __webpack_require__(209);
 
@@ -21569,7 +21567,7 @@
 	exports['default'] = (0, _reactRedux.connect)(function (state) {
 	    return { items: state.items };
 	}, function (dispatch) {
-	    return (0, _redux.bindActionCreators)({ getVideoListByTitle: _actionsActionsJs.getVideoListByTitle }, dispatch);
+	    return (0, _redux.bindActionCreators)({ getVideoListByTitle: _ActionsJs.getVideoListByTitle }, dispatch);
 	})(App);
 	module.exports = exports['default'];
 
@@ -21588,21 +21586,21 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _constantsAppConstants = __webpack_require__(188);
+	var _AppConstants = __webpack_require__(188);
 
-	var _constantsAppConstants2 = _interopRequireDefault(_constantsAppConstants);
+	var _AppConstants2 = _interopRequireDefault(_AppConstants);
 
-	var _apiApiJs = __webpack_require__(190);
+	var _apiJs = __webpack_require__(190);
 
-	var _apiApiJs2 = _interopRequireDefault(_apiApiJs);
+	var _apiJs2 = _interopRequireDefault(_apiJs);
 
 	function getVideoListByTitle() {
 	    var videoTitle = arguments.length <= 0 || arguments[0] === undefined ? '' : arguments[0];
 
 	    return {
-	        type: _constantsAppConstants2['default'].PROMISE,
-	        actions: [_constantsAppConstants2['default'].VIDEO_LIST_LOADING, _constantsAppConstants2['default'].VIDEO_LIST_LOADED, _constantsAppConstants2['default'].VIDEO_LIST_FAILURE],
-	        promise: _apiApiJs2['default'].getVideoListByTitle(videoTitle)
+	        type: _AppConstants2['default'].PROMISE,
+	        actions: [_AppConstants2['default'].VIDEO_LIST_LOADING, _AppConstants2['default'].VIDEO_LIST_LOADED, _AppConstants2['default'].VIDEO_LIST_FAILURE],
+	        promise: _apiJs2['default'].getVideoListByTitle(videoTitle)
 	    };
 	}
 
@@ -21707,16 +21705,18 @@
 
 	var _axios2 = _interopRequireDefault(_axios);
 
-	var _etcConfigJson = __webpack_require__(208);
+	var _configJson = __webpack_require__(208);
 
-	var _etcConfigJson2 = _interopRequireDefault(_etcConfigJson);
+	var _configJson2 = _interopRequireDefault(_configJson);
 
 	exports['default'] = {
 	    getVideoListByTitle: function getVideoListByTitle() {
 	        var videoTitle = arguments.length <= 0 || arguments[0] === undefined ? '' : arguments[0];
 
-	        console.log(videoTitle + '____');
-	        return _axios2['default'].get(_etcConfigJson2['default'].firstURL + '&q=' + videoTitle + '&key=' + _etcConfigJson2['default'].API_key);
+	        var url = _configJson2['default'].firstURL + '&q=' + videoTitle + '&key=' + _configJson2['default'].API_key;
+	        console.log("API url: " + url);
+
+	        return _axios2['default'].get(url);
 	    }
 	};
 	module.exports = exports['default'];
@@ -23013,9 +23013,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _etcConfigJson = __webpack_require__(208);
+	var _configJson = __webpack_require__(208);
 
-	var _etcConfigJson2 = _interopRequireDefault(_etcConfigJson);
+	var _configJson2 = _interopRequireDefault(_configJson);
 
 	var VideoItem = (function (_Component) {
 	    _inherits(VideoItem, _Component);
@@ -23034,7 +23034,7 @@
 	                { className: 'VideoItem col-lg-4 col-md-6 col-sm-6 col-xs-12' },
 	                _react2['default'].createElement('iframe', {
 	                    width: '100%', height: '315',
-	                    src: _etcConfigJson2['default'].firstURLVideo + this.props.videoItem.id.videoId,
+	                    src: _configJson2['default'].firstURLVideo + this.props.videoItem.id.videoId,
 	                    frameBorder: '0',
 	                    allowFullScreen: true })
 	            );
@@ -23079,9 +23079,9 @@
 
 	var reducers = _interopRequireWildcard(_reducers);
 
-	var _constantsAppConstantsJs = __webpack_require__(188);
+	var _AppConstantsJs = __webpack_require__(188);
 
-	var _constantsAppConstantsJs2 = _interopRequireDefault(_constantsAppConstantsJs);
+	var _AppConstantsJs2 = _interopRequireDefault(_AppConstantsJs);
 
 	var reducer = (0, _redux.combineReducers)(reducers);
 	var logger = (0, _reduxLogger2['default'])();
@@ -23342,14 +23342,14 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _constantsAppConstantsJs = __webpack_require__(188);
+	var _AppConstantsJs = __webpack_require__(188);
 
-	var _constantsAppConstantsJs2 = _interopRequireDefault(_constantsAppConstantsJs);
+	var _AppConstantsJs2 = _interopRequireDefault(_AppConstantsJs);
 
 	var middleware = function middleware(store) {
 	    return function (next) {
 	        return function (action) {
-	            if (action.type !== _constantsAppConstantsJs2['default'].PROMISE) {
+	            if (action.type !== _AppConstantsJs2['default'].PROMISE) {
 	                return next(action);
 	            }
 
@@ -23410,15 +23410,15 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _constantsAppConstantsJs = __webpack_require__(188);
+	var _AppConstantsJs = __webpack_require__(188);
 
-	var _constantsAppConstantsJs2 = _interopRequireDefault(_constantsAppConstantsJs);
+	var _AppConstantsJs2 = _interopRequireDefault(_AppConstantsJs);
 
 	exports['default'] = function (state, action) {
 	    if (state === undefined) state = [];
 
 	    switch (action.type) {
-	        case _constantsAppConstantsJs2['default'].VIDEO_LIST_LOADED:
+	        case _AppConstantsJs2['default'].VIDEO_LIST_LOADED:
 	            return action.data.data.items;
 
 	        default:

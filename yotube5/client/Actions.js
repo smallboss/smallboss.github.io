@@ -1,6 +1,6 @@
-import Constants from '../constants/AppConstants';
+import Constants from './AppConstants';
 
-import API from '../api/api.js';
+import API from './api.js';
 
 export function getVideoListByTitle(videoTitle = '') {
     return{

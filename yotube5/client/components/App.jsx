@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
 
-import {getVideoListByTitle} from '../actions/Actions.js';
+import {getVideoListByTitle} from '../Actions.js';
 
 import SearchField from './SearchField.jsx';
 import VideoList from './VideoList.jsx';

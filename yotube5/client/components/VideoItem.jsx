@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import URLData from '../../etc/config.json';
+import URLData from '../config.json';
 
 class VideoItem extends Component{
     render() {

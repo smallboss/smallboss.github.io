@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 
 import App from './components/App.jsx';
-import store from './state/state'
-import Constants from './constants/AppConstants.js'
+import store from './state.js'
+import Constants from './AppConstants.js'
 
 
 ReactDOM.render(
@@ -13,4 +13,4 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('mount-point'));
 
-store.subscribe(() => console.log('New state', store.getState()));
+// store.subscribe(() => console.log('New state', store.getState()));

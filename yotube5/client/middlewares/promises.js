@@ -1,4 +1,4 @@
-import Constants from '../constants/AppConstants.js'
+import Constants from '../AppConstants.js'
 
 const middleware = store => next => action => {
     if (action.type !== Constants.PROMISE) {

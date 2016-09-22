@@ -1,8 +1,8 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import createLogger from 'redux-logger';
-import promisesMiddleware from '../middlewares/promises.js'
-import * as reducers from '../reducers';
-import Constants from '../constants/AppConstants.js'
+import promisesMiddleware from './middlewares/promises.js'
+import * as reducers from './reducers';
+import Constants from './AppConstants.js'
 
 
 const reducer = combineReducers(reducers);
