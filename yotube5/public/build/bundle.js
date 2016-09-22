@@ -22861,6 +22861,7 @@
 
 	        this.handleTextChange = this.handleTextChange.bind(this);
 	        this.handleSearchVideo = this.handleSearchVideo.bind(this);
+	        this.handleEnter = this.handleEnter.bind(this);
 	    }
 
 	    _createClass(SearchField, [{
@@ -22872,6 +22873,13 @@
 	        key: 'handleSearchVideo',
 	        value: function handleSearchVideo() {
 	            this.props.onSearchVideo(this.state.text);
+	        }
+	    }, {
+	        key: 'handleEnter',
+	        value: function handleEnter(event) {
+	            if (event.key === 'Enter') {
+	                this.handleSearchVideo();
+	            }
 	        }
 	    }, {
 	        key: 'render',
@@ -22890,6 +22898,7 @@
 	                            className: 'form-control',
 	                            placeholder: 'Search for...',
 	                            value: this.state.text,
+	                            onKeyPress: this.handleEnter,
 	                            onChange: this.handleTextChange }),
 	                        _react2['default'].createElement(
 	                            'span',
