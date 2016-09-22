@@ -22881,7 +22881,7 @@
 	                { className: 'Editor row' },
 	                _react2['default'].createElement(
 	                    'div',
-	                    { className: 'edit-inner col-lg-4 col-md-7 col-sm-8 col-lg-12' },
+	                    { className: 'edit-inner col-lg-4 col-md-6 col-sm-6 col-lg-12' },
 	                    _react2['default'].createElement(
 	                        'div',
 	                        { className: 'input-group' },
@@ -22901,7 +22901,7 @@
 	                                    type: 'button',
 	                                    disabled: !this.state.text,
 	                                    onClick: this.handleSearchVideo },
-	                                'Go!'
+	                                _react2['default'].createElement('span', { className: 'glyphicon glyphicon-search', 'aria-hidden': 'true' })
 	                            )
 	                        )
 	                    )
