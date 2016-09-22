@@ -10,6 +10,7 @@ class SearchField extends Component {
 
         this.handleTextChange = this.handleTextChange.bind(this);
         this.handleSearchVideo = this.handleSearchVideo.bind(this);
+        this.handleEnter = this.handleEnter.bind(this);
     }
 
 
@@ -22,6 +23,12 @@ class SearchField extends Component {
         this.props.onSearchVideo(this.state.text);
     }
 
+    handleEnter(event) {
+        if(event.key === 'Enter'){
+            this.handleSearchVideo();
+        }
+    }
+
     render() {
         return (
             <div className='Editor row'>
@@ -32,6 +39,7 @@ class SearchField extends Component {
                             className="form-control" 
                             placeholder="Search for..." 
                             value={this.state.text}
+                            onKeyPress={this.handleEnter}
                             onChange={this.handleTextChange} />
                         <span className="input-group-btn">
                             <button 
