@@ -127,6 +127,18 @@ input.search{
     border: none;
     box-sizing: border-box;
 }
+form{
+    position: relative;
+}
+form:after {
+    content: '';
+    background: url(../img/search.png) center center no-repeat;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 7px;
+    right: 10px;
+}
 
 ul.head-nav{
     font-size: 12px;
