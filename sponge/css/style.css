@@ -741,6 +741,14 @@ footer .sidebar{
     .wrap-footer-nav{
         display: none;
     }
+
+    .wrap-social{
+        float: right;
+    }
+
+    .wrap-footer-logo{
+        margin-top: 25px;
+    }
 }
 
 @media screen and (max-width: 768px){
