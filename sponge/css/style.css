@@ -37,6 +37,10 @@ input{
     text-align: center;
 }
 
+a{
+  transition: all .218s ease-in-out;
+}
+
 /* ================ TABS ================ */
 .korpus { margin-top: 33px; }
 .korpus > div, .korpus > input { display: none; }
