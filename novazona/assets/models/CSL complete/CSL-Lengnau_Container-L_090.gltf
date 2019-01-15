@@ -1,0 +1,230 @@
+{
+    "asset": {
+        "copyright": "Zyrox",
+        "generator": "Maya2glTF V0.9.7-BETA ab18f62",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "children": [
+                1
+            ],
+            "name": "group27"
+        },
+        {
+            "children": [
+                2
+            ],
+            "translation": [
+                5.094748973846436,
+                1.3804893493652344,
+                0.45889872312545779
+            ],
+            "scale": [
+                0.900682806968689,
+                0.900682806968689,
+                0.900682806968689
+            ],
+            "name": "pasted__Container_L1"
+        },
+        {
+            "mesh": 0,
+            "translation": [
+                -37.68684768676758,
+                1.533443808555603,
+                -31.19959831237793
+            ],
+            "name": "pasted__Container_L1Shape"
+        }
+    ],
+    "meshes": [
+        {
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ],
+            "name": "pasted__Container_L1Shape"
+        }
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 285471,
+            "max": [
+                266242
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 266243,
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 3194916,
+            "componentType": 5126,
+            "count": 266243,
+            "max": [
+                9.00241470336914,
+                2.0275959968566896,
+                12.693536758422852
+            ],
+            "min": [
+                -9.002418518066407,
+                -2.0275959968566896,
+                -12.693540573120118
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 266243,
+            "max": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0,
+                -1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 266243,
+            "max": [
+                0.994412362575531,
+                0.9980000257492064
+            ],
+            "min": [
+                0.0020000000949949028,
+                0.005925953388214111
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "materials": [
+        {
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "baseColorTexture": {
+                    "index": 0
+                },
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            },
+            "normalTexture": {
+                "index": 1
+            }
+        }
+    ],
+    "textures": [
+        {
+            "sampler": 0,
+            "source": 0
+        },
+        {
+            "sampler": 0,
+            "source": 1
+        }
+    ],
+    "images": [
+        {
+            "uri": "CABIN_Base_Color.png"
+        },
+        {
+            "uri": "CABIN_Normal_OpenGL.png"
+        }
+    ],
+    "samplers": [
+        {
+            "magFilter": 9729,
+            "minFilter": 9987,
+            "wrapS": 10497,
+            "wrapT": 10497
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 12779664,
+            "byteLength": 1141884,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 4259888,
+            "byteLength": 6389832,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 4259888,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 10649720,
+            "byteLength": 2129944,
+            "byteStride": 8,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 13921548,
+            "uri": "CSL-Lengnau_Container-L_0900.bin"
+        }
+    ]
+}
