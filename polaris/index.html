@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NEW PROJECT</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+    <script src="https://threejs.org/build/three.js"></script>
+    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <!--<script src="https://threejs.org/examples/js/controls/TransformControls.js"></script>-->
+    <script src="https://threejs.org/examples/js/libs/inflate.min.js"></script>
+    <script src="https://threejs.org/examples/js/loaders/FBXLoader.js"></script>
+
+    <!--<script src="https://smtpjs.com/v3/smtp.js"></script>-->
+    <!--<script src="https://smtpjs.com/v2/smtp.js"></script>-->
+
+    <!--<script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>-->
+    <!--<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />-->
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+
+    <style>
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            transition: opacity .5s;
+        }
+    </style>
+
+<link rel="apple-touch-icon" sizes="57x57" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-icon-180x180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="fbx-project"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="#fff"><meta name="application-name" content="fbx-project"><link rel="icon" type="image/png" sizes="32x32" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/favicon-16x16.png"><link rel="shortcut icon" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/favicon.ico"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-startup-image-320x460.png"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-startup-image-640x920.png"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-startup-image-640x1096.png"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-startup-image-750x1294.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-startup-image-1182x2208.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-startup-image-1242x2148.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-startup-image-748x1024.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-startup-image-768x1004.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-startup-image-1496x2048.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="icons-5b1f36bc41ab31f5b801d48ba1d65781/apple-touch-startup-image-1536x2008.png"><link href="styles.10db6eb1d246c1179526.css" rel="stylesheet"></head>
+<body>
+
+    <div class="wrap-editor">
+        <div class="wrap-stngs-panel">
+            <div id="stng-item" class="wrap-stng-item">
+                <img src="watermark.115352764e06bd5f87fd.png" alt="">
+            </div>
+        </div>
+
+        <header>
+            <h1>How we adverties your business</h1>
+            <p class="head-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam distinctio et, libero molestias nihil nostrum possimus quia quisquam sit. Et eveniet exercitationem explicabo iure rem repudiandae, sint. Mollitia, reiciendis.</p>
+        </header>
+
+        <div id="threeJS">
+            <div id="label-btns" class="label-btns">
+                <div class="can-toggle demo-rebrand-2">
+                    <input id="label-toggle" type="checkbox" data-range="fill-mode">
+                    <label for="label-toggle">
+                        <div class="can-toggle__switch" data-checked="Fill" data-unchecked="Fit"></div>
+                    </label>
+                </div>
+                <button id="label-edit" class="label-btn edit">Edit</button>
+                <button id="label-del" class="label-btn del">Delete</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <form id="img-form" class="dispNone" action="">
+                <input id="img-input" type="file">
+            </form>
+
+            <section id="step-1" class="step-1">
+                <button id="upload-img" class="btn upload">Upload Graphics</button>
+                <p>or<br>Drag & Drop anywhere on the vehicle</p>
+            </section>
+
+            <section id="step-2" class="step-2" style="display: none;">
+
+                <div id="tg-list-item" class="tg-list-item disabled">
+                    <span>Fit graphics to panels</span>
+                    <input class="tgl tgl-light" id="fill-mode" type="checkbox" data-range="fill-mode"/>
+                    <label class="tgl-btn" for="fill-mode"></label>
+                    <span>Fill panels with graphics</span>
+                </div>
+
+                <p class="text-under-toggle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad cum enim esse est fugit, hic id labore laborum libero modi nisi pariatur perspiciatis quaerat quibusdam quod rerum totam vel voluptatem.</p>
+
+                <button id="btn-show-modal" class="btn blue">download your preview</button>
+                <button id="reset" class="btn upload btn-reset">Reset</button>
+            </section>
+        </div>
+    </div>
+
+    <div id="wrap-modal" class="wrap-modal">
+        <div class="modal">
+
+            <div id="close" class="close"></div>
+
+            <a class="modal-link" href="https://www.thenickelride.com/advertise-with-us">
+                <img src="thenickelride-logo.e99ca94f0b56aa212f71.png" alt="logo">
+            </a>
+            
+            <form id="user-from" class="user-from" action="">
+                <div class="form-row">
+                    <div class="wrap-input">
+                        <label for="first-name" >First name*</label>
+                        <input id="first-name" name="first-name" type="text" required>
+                    </div>
+
+                    <div class="wrap-input">
+                        <label for="last-name">Last name*</label>
+                        <input id="last-name" name="last-name" type="text" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="wrap-input">
+                        <label for="company">Company name*</label>
+                        <input id="company" name="company" type="text" required>
+                    </div>
+
+                    <div class="wrap-input">
+                        <label for="job-title">Job title</label>
+                        <input id="job-title" name="job-title" type="text">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="wrap-input">
+                        <label for="email">Email*</label>
+                        <input id="email" name="email" type="email" required>
+                    </div>
+
+                    <div class="wrap-input">
+                        <label for="phone">Phone number</label>
+                        <input id="phone" name="phone" type="text">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="wrap-input">
+                        <label for="state">State/Region</label>
+                        <input id="state" name="state" type="text">
+                    </div>
+
+                    <div class="wrap-input">
+                        <label for="city">City</label>
+                        <input id="city" name="city" type="text">
+                    </div>
+                </div>
+
+                <button id="download-now" class="btn blue btn-download">Download Now</button>
+            </form>
+
+            <div id="after-email" class="after-email" style="display: none;">
+                <div class="after-email-text">We mailed your design to <span id="text-email"></span> email address. Our account executive will reach out for your amazing looking future vehicle ads.</div>
+                <button id="thankyou" class="btn blue btn-download">Thank you</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+<script type="text/javascript" src="main.34bec46d2c85f0cf5801.js"></script></body>
+</html>
